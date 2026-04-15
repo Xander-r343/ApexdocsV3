@@ -9,11 +9,7 @@ const withNextra = nextra({
 export default withNextra({
   async redirects() {
     return [
-      {
-        source: "/",
-        destination: "/resources",
-        permanent: true,
-      },
+     
     ]
   }
   // ... Add regular Next.js options here
