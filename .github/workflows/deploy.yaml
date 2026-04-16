@@ -36,8 +36,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This must match your basePath in next.config.mjs
-          path: ./out/apex-pathing-docs
+          # Just point to 'out'. The basePath is handled by the HTML files themselves.
+          path: ./out
 
   deploy:
     environment:
