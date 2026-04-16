@@ -36,7 +36,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out # Next.js 'export' creates this folder
+          # This must match your basePath in next.config.mjs
+          path: ./out/apex-pathing-docs
 
   deploy:
     environment:
