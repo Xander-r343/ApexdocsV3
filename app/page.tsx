@@ -4,7 +4,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col w-full items-center justify-center min-h-[70vh] px-6 text-center">
       <div className="max-w-3xl">
-        <img src="/logo.png" alt="Apex Pathing Logo" className="w-64 h-64 mb-6 mx-auto" />
+        <img src="/apex-pathing-docs/logo.png" alt="Apex Pathing Logo" className="w-64 h-64 mb-6 mx-auto" />
         <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl mb-5">
           Apex Pathing
         </h1>
