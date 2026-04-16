@@ -1,16 +1,19 @@
 import nextra from 'nextra'
- 
-// Set up Nextra with its configuration
+
 const withNextra = nextra({
-  // ... Add Nextra-specific options here
+  theme: 'nextra-theme-docs',
+  themeConfig: './theme.config.jsx', // or .tsx
 })
- 
-// Export the final Next.js config with Nextra included
+
 export default withNextra({
-  async redirects() {
-    return [
-     
-    ]
-  }
-  // ... Add regular Next.js options here
+  // 1. Force Next.js to output static HTML files
+  output: 'export',
+  
+  // 2. Tell Next.js the site is in a subfolder (/apex-pathing-docs)
+  basePath: '/apex-pathing-docs',
+
+  // 3. Static sites don't support the default Next.js Image Optimization
+  images: {
+    unoptimized: true,
+  },
 })
