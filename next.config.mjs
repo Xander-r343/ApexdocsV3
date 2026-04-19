@@ -7,9 +7,9 @@ const withNextra = nextra({
  
 const nextConfig = {
   output: 'export',
-  basePath: '/apex-pathing-docs',
   images: { unoptimized: true },
-  assetPrefix: "./",
+  basePath: process.env.NODE_ENV === 'production' ? '/apex-pathing-docs' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/apex-pathing-docs/' : '',
 }
 
 // Export the final Next.js config with Nextra included
