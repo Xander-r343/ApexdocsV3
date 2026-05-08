@@ -1,0 +1,9 @@
+import { Tabs, Callout } from 'nextra/components'
+
+Run the Axial Tuner.java, and make sure you have plenty of open space.
+
+Hold X to turn the robot 180 degrees, hold B to rotate to -45 degrees, and hold A to rotate back to the start position. Adjust the proportional gain, derivative gain, minimum power, and deadzone in Panels.
+
+The tuner will spit out a bunch of values, put them in the constants file:
+```java
+                .setAxialCoeffs(new PDFLCoefficients(value, value, value))```
