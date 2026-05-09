@@ -1,7 +1,6 @@
 export default {
-    "HeadingTuner": "Heading Tuner",
-    "AxialTuner": "Axial Tuner",
-    "feedforward-tuner": "Feedforward Tuner",
-    "forward-deceleration-tuner": "Forward Deceleration Tuner",
-    "forward-and-lateral-velocity-tuners": "Velocity Tuners"
+    "localization-test": "Localization Test",
+    "heading-tuner": "Heading Tuner",
+    "lateral-tuner": "Lateral Tuner",
+    "axial-tuner": "Axial Tuner",
 }
