@@ -1,0 +1,28 @@
+import { Steps } from 'nextra/components'
+
+# Apex Pathing Constants Setup
+---
+
+Clone the project on github and navigate to the constants file. The constants file holds three main types of constants:
+* **Follower Constants:** Define how your robot follows a path
+* **Drivetrain Constants:** Constants specifically related to your drivetrain, different for each type
+* **Localizer Constants:** Constants relating to your odometry pods, encoder offsets, and more...type
+
+<Steps>
+### Open `Constants.java`
+In Android Studio, double press the shift key to open the search prompt and search for 
+`TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Constants.java`. When you press enter, the file holding robot
+constants will open up, this is the only file you will need to edit.
+
+### Drivetrain Constants
+Head over to the [Drivetrain Configuration](../drivetrain-configuration/page.mdx) page which will guide you through the 
+process of creating the `DrivetrainConstants` for your robot. Once you've done that, come back here.
+ 
+### Localizer Constants
+Similarly, the [Localizer Configuration](../localizer-configuration/page.mdx) page which will guide you through setting
+up a `LocalizerConstants` class for your robot. This should be done after the drivetrain constants are set up. Once
+you've done that, come back here.
+
+### Leave follower constants for now
+The follower constants will be filled out as we tune your robot, so you can leave those for now.
+</Steps>
