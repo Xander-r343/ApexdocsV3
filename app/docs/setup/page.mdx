@@ -1,4 +1,5 @@
-import { Steps } from 'nextra/components'
+import { ScrollBehavior } from 'next/dist/client/components/router-reducer/router-reducer-types'
+import { Steps, Table, Callout } from 'nextra/components'
 
 # Apex Pathing Constants Setup
 ---
@@ -25,4 +26,67 @@ you've done that, come back here.
 
 ### Leave follower constants for now
 The follower constants will be filled out as we tune your robot, so you can leave those for now.
+
+### Verify functionality
+At this point, all of your constants should be filled out. Now you can open up the `Apex TeleOp Test` OpMode on your
+driver hub and run it, you should see the current x, y, and heading values in the telemetry. Everything should behave as
+follows:
+
+X/Y/Heading values should all start at 0 when the OpMode is initialized.
+<Table className="mt-2">
+  <thead>
+    <Table.Tr>
+      <Table.Th>Value</Table.Th>
+      <Table.Th>Behavior</Table.Th>
+    </Table.Tr>
+  </thead>
+  <tbody>
+    <Table.Tr>
+      <Table.Td>X</Table.Td>
+      <Table.Td>Increases when moving forward</Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td>Y</Table.Td>
+      <Table.Td>Increases when moving left</Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td>Heading</Table.Td>
+      <Table.Td>Increases when turning counterclockwise (left)</Table.Td>
+    </Table.Tr>
+  </tbody>
+</Table>
+
+You should be able to drive the robot like a normal TeleOp OpMode.
+<Table className='mt-2'>
+  <thead>
+    <Table.Tr>
+      <Table.Th>Joystick</Table.Th>
+      <Table.Th>Behavior</Table.Th>
+    </Table.Tr>
+  </thead>
+  <tbody>
+    <Table.Tr>
+      <Table.Td>Left stick: forward and backward</Table.Td>
+      <Table.Td>Moves the robot forward and backward accordingly</Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td>Left stick: left and right</Table.Td>
+      <Table.Td>Moves the robot left and right accordingly (only for holonomic drivetrains)</Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td>Right stick: left and right</Table.Td>
+      <Table.Td>Turns the robot counterclockwise (left) and clockwise (right) accordingly</Table.Td>
+    </Table.Tr>
+  </tbody>
+</Table>
+
+<Callout type="info">
+    If the above checks do not pass, your robot will not behave correctly. Currently, there is no troubleshooting guide
+    for this step, so you should ask for help in the Apex Pathing Discord server.
+</Callout>
 </Steps>
+
+
+## Tuning
+The last step before being able to run your first path is tuning the follower constants. This entire process will be
+completely automated in the future, but for now, you'll need to tune manually with the [tuning guide](/docs/tuning/overview).
