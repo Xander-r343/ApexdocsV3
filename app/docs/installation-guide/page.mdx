@@ -1,8 +1,94 @@
+<<<<<<< HEAD
+import { Callout, Steps, Tabs } from 'nextra/components'
+=======
 import { Callout } from 'nextra/components'
+>>>>>>> 917c7656172cdb1d566c1011e15405514d995dc9
 
 # Setup Apex Pathing
 
 ## Prerequisites
+<<<<<<< HEAD
+
+- **Drivetrain:** Holonomic (swerve/mecanum/x-drive) or tank drive.
+- **Localization:** GoBILDA Pinpoint, 2/3 dead wheels, Sparkfun OTOS, or fusion with a camera
+- **Environment:** Android Studio or OnBotJava, blocks aren't supported
+
+<Callout type="warning">
+  MAKE SURE YOU HAVE PANELS INSTALLED
+</Callout>
+
+---
+
+# Getting Started
+
+Start by cloning the project on GitHub:
+
+```bash
+git clone https://github.com/ApexPathing/main.git
+```
+
+```bash
+cd main
+```
+
+Next, navigate to the Constants file. The constants file holds **three main** types of constants:
+
+- **Follower Constants:** Constants corresponding to components of the follower
+- **Drivetrain Constants:** Constants specifically related to your drivetrain, different for each type
+- **Localizer Constants:** Constants relating to your odometry pods, encoder offsets, and more...type
+
+While tuning your robot, you will fill out all the fields necessary in the Constants file to allow Apex to run flawlessly on your robot.
+This data will be acquired through various tuners and tests for your robot. Get started by filling out your **localizer constants** and your **drivetrain constants**.
+
+---
+
+# 1) Set your Pinpoint constants in Constants.java
+
+```java
+@Override
+public LocalizerConstants setLocalizerConstants() { // Any LocalizerConstants
+    return new PinpointConstants()
+            //device name
+            .setName("pinpoint")
+            .setDistanceUnit(DistanceUnit.INCH)
+            .setAngleUnit(AngleUnit.DEGREES)
+            //offset of x pod
+            .setXOffset(0.0) // In distanceUnit
+            //offset of y pod
+            .setYOffset(0.0) // In distanceUnit
+            //pod directions
+            .setXPodDirection(GoBildaPinpointDriver.EncoderDirection.FORWARD)
+            .setYPodDirection(GoBildaPinpointDriver.EncoderDirection.FORWARD)
+            //pod encoder resolution
+            .setEncoderResolution(GoBildaPinpointDriver.GoBildaOdometryPods.goBILDA_4_BAR_POD);
+}
+```
+
+---
+
+# 2) Set your Drivetrain constants in Constants.java
+
+```java
+@Override
+public DrivetrainConstants setDrivetrainConstants() { // Any DrivetrainConstants
+    return new MecanumConstants()
+             //motor names
+            .setFrontLeftMotorName("frontLeftMotor")
+            .setBackLeftMotorName("backLeftMotor")
+            .setFrontRightMotorName("frontRightMotor")
+            .setBackRightMotorName("backRightMotor")
+            //motor directions
+            .setFrontRightReversed(true)
+            .setBackRightReversed(true)
+            .setBrakeMode(true)
+            .setRobotCentric(true)
+            //motor maximum power threshold
+            .setMaxPower(1.0);
+}
+```
+
+After this is completed, the Follower Constants will be filled through the tuning process.
+=======
 * **Drivetrain:** Holonomic (swerve/mecanum/x-drive) or tank drive.
 * **Localization:** goBILDA Pinpoint, 2/3 dead wheels, Sparkfun OTOS, or fusion with a camera
 * **Environment:** Android Studio or OnBotJava, blocks aren't supported
@@ -68,3 +154,4 @@ After this is finished we will fill out the Follower Constants as we tune your r
 
 
 
+>>>>>>> 917c7656172cdb1d566c1011e15405514d995dc9

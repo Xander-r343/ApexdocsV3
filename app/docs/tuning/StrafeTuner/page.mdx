@@ -1,5 +1,42 @@
 import { Callout } from 'nextra/components'
 
+<<<<<<< HEAD
+# Strafe Tuner
+
+The Strafe Tuner calibrates the **strafe (lateral) controller** — the PDFL loop responsible for side-to-side translational motion. Proper tuning ensures accurate lateral distance tracking and minimizes overshoot during strafing movements.
+
+<Callout type="warning">
+  Clear a large open area before running this tuner. The robot will strafe laterally during the tuning sequence.
+</Callout>
+
+Select the **Strafe Tuner** OpMode on your Driver Station and follow the on-screen telemetry prompts to begin.
+
+---
+
+### Tuning Procedure
+
+- Observe the robot's lateral response during each strafe movement — look for overshoot, oscillation, or sluggishness.
+- Adjust the following parameters in **Panels** based on observed behavior:
+  - **Proportional Gain (P)** — Controls how aggressively the robot corrects lateral position error. Increase to reduce steady-state error; too high causes oscillation.
+  - **Derivative Gain (D)** — Dampens the correction response. Increase to reduce overshoot and oscillation.
+  - **Minimum Power (F)** — Sets a feedforward floor to overcome static friction at low error values.
+  - **Deadzone (L)** — Defines the error threshold below which no correction is applied. Helps prevent jitter near the target.
+- Repeat the strafe sequence and re-tune until motion is smooth, accurate, and settled.
+
+---
+
+### Applying Your Values
+
+Once tuning is complete, update the following line in your robot configuration with the values obtained:
+
+```java
+.setStrafeCoeffs(new PDFLCoefficients(p, d, f, l))
+```
+
+<Callout type="info">
+  Replace `p`, `d`, `f`, and `l` with the final tuned values shown in telemetry. You may also adjust the tolerances after tuning to fine-tune settling behavior.
+</Callout>
+=======
 Run the strafe tuner and make sure you have plenty of space
 
 The tuner will tune the strafe controller and spit out some PID values:
@@ -10,3 +47,4 @@ Add this line to your constants file with the values the opmode spits out:
 ```
 
 Feel free to adjust the tolerances after tuning
+>>>>>>> 917c7656172cdb1d566c1011e15405514d995dc9
