@@ -1,5 +1,6 @@
 import { Tabs, Callout } from 'nextra/components'
 
+<<<<<<< HEAD
 # Axial Tuner
 
 The Axial Tuner calibrates the **axial (drive) controller** — the PID/PDFL loop responsible for forward and backward translational motion. Proper tuning ensures accurate distance tracking and minimizes overshoot during straight-line movement.
@@ -47,3 +48,12 @@ Once tuning is complete, update the following line in your Constants file with t
 <Callout type="info">
   Replace `p`, `d`, `f`, and `l` with the final tuned values shown in telemetry.
 </Callout>
+=======
+Run the Axial Tuner.java, and make sure you have plenty of open space.
+
+Hold X to turn the robot 180 degrees, hold B to rotate to -45 degrees, and hold A to rotate back to the start position. Adjust the proportional gain, derivative gain, minimum power, and deadzone in Panels.
+
+The tuner will spit out a bunch of values, put them in the constants file:
+```java
+                .setAxialCoeffs(new PDFLCoefficients(value, value, value))```
+>>>>>>> 917c7656172cdb1d566c1011e15405514d995dc9

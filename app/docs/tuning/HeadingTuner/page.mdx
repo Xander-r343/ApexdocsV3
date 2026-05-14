@@ -2,6 +2,7 @@ import { Callout, Tabs } from 'nextra/components'
 
 # Heading Tuner
 
+<<<<<<< HEAD
 The Heading Tuner calibrates the **heading (rotation) controller** — the PID/PDFL loop responsible for maintaining and correcting the robot's angular orientation. Proper tuning ensures precise rotation to target headings with minimal overshoot and drift.
 
 <Callout type="warning">
@@ -47,3 +48,17 @@ Once tuning is complete, update the following line in your robot configuration w
 <Callout type="info">
   Replace `p`, `d`, `f`, and `l` with the final tuned values shown in telemetry.
 </Callout>
+=======
+The Heading tuner will tune your heading controller:
+
+Make sure you have a clear space and then run the test
+
+After you run the test, make sure you fill in this line with the new values given:
+```java
+                .setHeadingCoeffs(new PDFLCoefficients(value, value, value))```
+
+
+
+
+
+>>>>>>> 917c7656172cdb1d566c1011e15405514d995dc9

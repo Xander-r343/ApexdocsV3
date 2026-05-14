@@ -1,5 +1,6 @@
 import { Callout } from 'nextra/components'
 
+<<<<<<< HEAD
 # Strafe Tuner
 
 The Strafe Tuner calibrates the **strafe (lateral) controller** — the PDFL loop responsible for side-to-side translational motion. Proper tuning ensures accurate lateral distance tracking and minimizes overshoot during strafing movements.
@@ -35,3 +36,15 @@ Once tuning is complete, update the following line in your robot configuration w
 <Callout type="info">
   Replace `p`, `d`, `f`, and `l` with the final tuned values shown in telemetry. You may also adjust the tolerances after tuning to fine-tune settling behavior.
 </Callout>
+=======
+Run the strafe tuner and make sure you have plenty of space
+
+The tuner will tune the strafe controller and spit out some PID values:
+
+Add this line to your constants file with the values the opmode spits out:
+```java
+                .setStrafeCoeffs(new PDFLCoefficients(value, value, value))
+```
+
+Feel free to adjust the tolerances after tuning
+>>>>>>> 917c7656172cdb1d566c1011e15405514d995dc9
