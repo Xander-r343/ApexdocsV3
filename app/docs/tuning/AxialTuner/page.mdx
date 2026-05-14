@@ -1,0 +1,49 @@
+import { Tabs, Callout } from 'nextra/components'
+
+# Axial Tuner
+
+The Axial Tuner calibrates the **axial (drive) controller** — the PID/PDFL loop responsible for forward and backward translational motion. Proper tuning ensures accurate distance tracking and minimizes overshoot during straight-line movement.
+
+<Callout type="warning">
+  Clear a large open area before running this tuner. The robot will travel up to 24 inches in a single direction.
+</Callout>
+
+Select the **Axial Tuner** OpMode on your Driver Station and follow the on-screen telemetry prompts to begin.
+
+---
+
+### Controls
+
+| Button | Action |
+|--------|--------|
+| `gamepad1.x` (hold) | Drive forward 24 inches |
+| `gamepad1.b` (hold) | Drive backward 6 inches |
+| `gamepad1.a` (hold) | Return to starting position |
+
+---
+
+### Tuning Procedure
+
+- **Hold X** to drive the robot forward 24 inches and observe the motion profile.
+- **Hold B** to drive the robot backward 6 inches and check for oscillation or undershoot.
+- **Hold A** to return the robot to its origin position.
+- Adjust the following parameters in **Panels** based on observed behavior:
+  - **Proportional Gain (P)** — Controls how aggressively the robot corrects position error. Increase to reduce steady-state error; too high causes oscillation.
+  - **Derivative Gain (D)** — Dampens the correction response. Increase to reduce overshoot and oscillation.
+  - **Minimum Power (F)** — Sets a feedforward floor to overcome static friction at low error values.
+  - **Deadzone (L)** — Defines the error threshold below which no correction is applied. Helps prevent jitter near the target.
+
+
+---
+
+### Applying Your Values
+
+Once tuning is complete, update the following line in your Constants file with the values obtained:
+
+```java
+.setAxialCoeffs(new PDFLCoefficients(p, d, f, l))
+```
+
+<Callout type="info">
+  Replace `p`, `d`, `f`, and `l` with the final tuned values shown in telemetry.
+</Callout>
