@@ -7,7 +7,8 @@ const withNextra = nextra({
  
 const nextConfig = {
   output: 'export',
-  images: { unoptimized: true }
+  images: { unoptimized: true }, 
+  basePath: '/docs'
 }
 
 // Export the final Next.js config with Nextra included
