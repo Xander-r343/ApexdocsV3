@@ -1,26 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-accent-text: var(--color-zinc-500);
+  --color-accent-text: #99a1af;
+  --color-divider: #262626;
   --color-background: #fafafa;
   --color-foreground: #000000;
-  --color-brand-primary: #0077b8;
-  --color-brand-primary-hover: #0096e4;
-  --color-brand-accent: #c7aa1a;
-  --color-brand-accent-hover: #e5c838;
-  --color-brand-glow: rgba(59, 130, 246, 0.15);
+  --primary: #780000;
+  --color-brand-primary: #780000;
+  --color-brand-primary-hover: #8F0000;
+  --color-brand-accent: #292929;
+  --color-brand-accent-hover: #333333;
+  --color-brand-glow: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-accent-text: var(--color-zinc-500);
-    --color-background: #1b1b1b;
+    --color-accent-text: #99a1af;
+    --color-divider: #262626;
+    --color-background: #1f1f1f;
     --color-foreground: #fafafa;
-    --color-brand-primary: #0077b8;
-    --color-brand-primary-hover: #0096e4;
-    --color-brand-accent: #c7aa1a;
-    --color-brand-accent-hover: #e5c838;
-    --color-brand-glow: rgba(59, 130, 246, 0.1);
+    --color-brand-primary: #780000;
+    --color-brand-primary-hover: #8F0000;
+    --color-brand-accent: #292929;
+    --color-brand-accent-hover: #333333;
+    --color-brand-glow: #000000;
   }
 }
 
@@ -28,39 +31,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui;
-  /* Smooth font rendering */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* THE MAGIC: Subtle Mesh Gradient Background */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 50% 0%, var(--brand-glow), transparent 40%),
-    radial-gradient(circle at 0% 100%, var(--brand-glow), transparent 25%);
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Custom Selection Color */
 ::selection {
-  background: rgba(59, 130, 246, 0.2);
-  color: var(--brand-blue);
-}
-
-/* Glassmorphism utility for Nextra nav or cards */
-.glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-header nav {
-  padding-left: 0.5rem !important;
-  padding-inline-start: 0.5rem !important;
+    background: var(--primary);
+    color: var(--foreground);
 }

@@ -1,19 +1,19 @@
 import './globals.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import logo from '../public/logo.png'
+import logo_icon from '../public/logo_icon.svg'
 
 export default function Home() {
   return (
     <div className="flex flex-col w-full items-center justify-center h-[calc(100vh-var(--nextra-navbar-height,4rem)-var(--nextra-banner-height,2.5rem)-3.8rem)] px-6 text-center">
       {/* Hero Section */}
       <div className="max-w-3xl">
-        <Image src={logo} alt="Apex Pathing Logo" width={256} height={256} className="w-64 h-64 mb-6 mx-auto" />
-        <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl mb-5">
+        <Image src={logo_icon} alt="Apex Pathing Logo" width={256} height={256} className="w-64 h-64 mb-6 mx-auto" />
+        <h1 className="text-4xl sm:text-5xl tracking-tight font-bold mb-5">
           Apex Pathing
         </h1>
-        <p className="text-xl text-neutral-600 dark:text-neutral-500 mb-10 leading-relaxed">
-          Apex legends has always been better than Pedro Pascal
+        <p className="text-xl text-accent-text mb-9 leading-relaxed">
+          The Apex pathing slogan goes here I guess
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-20">

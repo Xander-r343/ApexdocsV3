@@ -12,9 +12,9 @@ export const metadata = {
 function PageBanner() {
   return (
     <Banner storageKey="some-key">
-      Apex Pathing is currently not released! Join the &nbsp;
-      <a href="https://discord.gg/qpP4CXaHDg" target="_blank" rel="noopener noreferrer">Discord</a>
-      &nbsp; to help or keep up with development.
+      Apex Pathing is currently not released! Join the
+      &nbsp;<a href="https://discord.gg/qpP4CXaHDg" target="_blank" rel="noopener noreferrer">Discord</a>&nbsp;
+      to help or keep up with development.
     </Banner>
   )
 }
@@ -29,26 +29,28 @@ function PageNavbar() {
 
 function PageFooter() {
   return (
-      <footer className={`mt-auto border-t border-fd-border border-accent-text text-accent-text py-5 px-6 text-center text-sm text-muted-foreground`}>
-        &copy; 2026 Apex Pathing. Apex Pathing is licensed under the <a href="https://example.com/" className="text-fd-foreground hover:underline">FIGURE OUT LICENSE STUFF</a>. The Apex Pathing name and logo are trademarks of Apex Pathing.
-      </footer>
+    <footer className='mt-auto border-t py-5 border-divider text-center text-sm text-accent-text'>
+      &copy; 2026 Apex Pathing. Apex Pathing is licensed under the&nbsp;
+      <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" className="hover:underline hover:text-white">GNU General Public License v3.0</a>
+      . The Apex Pathing name and logo are trademarks of Apex Pathing.
+    </footer>
   )
 }
  
 export default async function RootLayout({ children } :{ children: React.ReactNode }) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
-      <Head/>
+      <Head color={{ hue: 0, saturation: 100, lightness: 45}} />
       <body>
        <Layout
           banner={PageBanner()}
           navbar={PageNavbar()}
           pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/ApexPathing/docs"
+          docsRepositoryBase="https://github.com/ApexPathing/docs/"
           footer={PageFooter()}
-          editLink={null}                    
+          editLink={null}              
           feedback={{ content: null }}
-          copyPageButton={false}        
+          copyPageButton={false}
         >
           {children}
         </Layout>
